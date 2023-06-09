@@ -1,26 +1,22 @@
-const { Schema, model } = require("mongoose");
+const {Schema, model } = require("mongoose");
 
 const moodSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  mood: {
+  mood: [{
     type: String,
-    enum: ['Happy','Excited','Optimistic','Relaxed','Bored', 'Apathetic','Lonely','Sad','Frustrated','Anxious','Irritated','Livid','Fed Up']
-  },
-  comment: {
-    type: String
-  },
-  moodSound: [{
-    type: String,
-    ref: 'MoodSound'
+    enum: ['Happy','Excited','Optimistic','Serene','Relaxed','Bored', 'Apathetic','Lonely','Sad','Frustrated','Anxious','Irritated','Livid','Fed Up']
   }],
+  comment: {
+    type: String,
+  },
   date: {type: Date,
-default: Date.now()},
+  default: Date.now()},
+  
   
 });
 
 const Mood = model("Mood", moodSchema);
 
 module.exports = Mood;
+
+
+

@@ -1,82 +1,72 @@
 const express = require("express");
 const router = express.Router();
-const Mood = require('../models/Mood.model');
-const MoodSound = require('../models/MoodSound.model')
+const Mood = require("../models/Mood.model");
+const MoodSound = require("../models/Mood.model");
 
-
-// post route to create a mood 
+// post route to create a mood
 router.post("/create-mood", async (req, res, next) => {
-const {user, mood, comment, date } = req.body;
-try {
-  let response = await Mood.create({user, mood, comment, date})
-
-const allSounds = await MoodSound.find()
-
-const moodSounds = allSounds.filter((sound) => sound.mood === mood)
-
-const rIndex = Math.floor(Math.random()*moodSounds.length)
-
-const updated = await Mood.findByIdAndUpdate(response._id, {$push: { moodSound: moodSounds[rIndex]._id }})
-
-  res.json(updated);
-
-} catch (error) {
-  res.json(error);
-}
-});
-
-// post route to create a mood 
-router.post("/create-mood-sound", async (req, res, next) => {
-  const {mood, soundUrl } = req.body;
+  const { user, mood, comment, date } = req.body;
   try {
-    let response = await MoodSound.create({mood, soundUrl})
-    res.json(response);
-  
+    let response = await Mood.create({ user, mood, comment, date });
+
+    const allSounds = await MoodSound.find();
+
+    const moodSounds = allSounds.filter((sound) => sound.mood === mood);
+
+    const rIndex = Math.floor(Math.random() * moodSounds.length);
+
+    const updated = await Mood.findByIdAndUpdate(response._id, {
+      $push: { moodSound: moodSounds[rIndex]._id },
+    });
+
+    res.json(updated);
   } catch (error) {
     res.json(error);
   }
-  });
+});
 
-
-// get route to get all moods submitted and show them in calendar 
-
-router.get("/get-mood", async (req, res) =>{
-
+// post route to create a mood
+router.post("/create-mood-sound", async (req, res, next) => {
+  const { mood, soundUrl } = req.body;
   try {
-    
+    let response = await MoodSound.create({ mood, soundUrl });
+    res.json(response);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+// get route to get all moods submitted and show them in calendar
+
+router.get("/get-mood", async (req, res) => {
+  try {
     letAllMoods = await Mood.find();
     res.json(letAllMoods);
-
-
   } catch (error) {
     res.json(error);
   }
-
 });
 
-//// GET /api/projects/:projectId to display specific info of a Mood in a specific day 
+//// GET /api/projects/:projectId to display specific info of a Mood in a specific day
 
-router.get("/get-mood/:moodId", async (req, res)=>{
+router.get("/get-mood/:moodId", async (req, res) => {
+  const moodId = req.params.moodId;
 
-const moodId = req.params.moodId;
+  if (!mongoose.Types.ObjectId.isValid(moodId)) {
+    // status of 2xx is successful.
+    // error with 4xx is client-side.
+    // error with 5xx is server-side
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
 
-if(!mongoose.Types.ObjectId.isValid(moodId)){
-  // status of 2xx is successful.
-  // error with 4xx is client-side.
-  // error with 5xx is server-side 
-  res.status(400).json({message: 'Specified id is not valid'});
-  return;
-}
-
-try {
-  let foundMood = await Mood.findById(moodId)
-        res.status(200).json(foundMood);
-
-} catch (error) {
-  res.json(error);
-}
-
-})
+  try {
+    let foundMood = await Mood.findById(moodId);
+    res.status(200).json(foundMood);
+  } catch (error) {
+    res.json(error);
+  }
+});
 // UPDATE - my mood
 router.put("/update-mood/:moodId", async (req, res) => {
   const moodId = req.params.moodId;
@@ -94,7 +84,7 @@ router.put("/update-mood/:moodId", async (req, res) => {
   }
 });
 
-// DELETE specific mood 
+// DELETE specific mood
 router.delete("/delete-mood/:moodId", async (req, res) => {
   const moodId = req.params.moodId;
 
