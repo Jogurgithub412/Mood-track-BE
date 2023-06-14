@@ -5,22 +5,22 @@ const MoodSound = require("../models/Mood.model");
 
 // post route to create a mood
 router.post("/create-mood", async (req, res, next) => {
-  console.log(JSON.stringify(req.body))
-  const { user, mood, comment } = req.body;
+  console.log(JSON.stringify(req.body));
+  const { mood, comment } = req.body;
   try {
-    let response = await Mood.create({ user, mood, comment });
+    await Mood.create({  mood, comment });
 
-    const allSounds = await MoodSound.find();
+    //const allSounds = await MoodSound.find();
 
-    const moodSounds = allSounds.filter((sound) => sound.mood === mood);
+    // const moodSounds = allSounds.filter((sound) => sound.mood === mood);
 
-    const rIndex = Math.floor(Math.random() * moodSounds.length);
+    //const rIndex = Math.floor(Math.random() * moodSounds.length);
 
-    const updated = await Mood.findByIdAndUpdate(response._id, {
-      $push: { moodSound: moodSounds[rIndex]._id },
-    });
+    //const updated = await Mood.findByIdAndUpdate(response._id, {
+    //$push: { moodSound: moodSounds[rIndex]._id },
+    //});
 
-    res.json(updated);
+    res.json("success");
   } catch (error) {
     res.json(error);
   }
