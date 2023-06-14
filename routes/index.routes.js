@@ -36,6 +36,15 @@ router.post("/create-mood-sound", async (req, res, next) => {
   }
 });
 
+router.get("/moods", async (req, res, next) => {
+  try {
+    let allMoods =  await Mood.find();
+    res.json(response);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
 // get route to get all moods submitted and show them in calendar
 
 router.get("/get-mood", async (req, res) => {
