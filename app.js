@@ -1,4 +1,4 @@
-let cors = require("cors")
+let cors = require("cors");
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require("dotenv").config();
@@ -22,7 +22,7 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
 
 const authRoutes = require("./routes/auth.routes");
-app.use("/api", authRoutes);
+app.use("/auth", authRoutes);
 
 const soundRoutes = require("./routes/sound.routes");
 app.use("/api", soundRoutes);
