@@ -5,9 +5,10 @@ const MoodSound = require("../models/Mood.model");
 
 // post route to create a mood
 router.post("/create-mood", async (req, res, next) => {
-  const { user, mood, comment, date } = req.body;
+  console.log(JSON.stringify(req.body))
+  const { user, mood, comment } = req.body;
   try {
-    let response = await Mood.create({ user, mood, comment, date });
+    let response = await Mood.create({ user, mood, comment });
 
     const allSounds = await MoodSound.find();
 
