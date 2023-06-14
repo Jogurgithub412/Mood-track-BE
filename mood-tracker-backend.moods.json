@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "647f17192f90049ef6f9f42c"
+  },
+  "mood": "Happy",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1a952f90049ef6f9f42e"
+  },
+  "mood": "Excited",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1bcd2f90049ef6f9f433"
+  },
+  "mood": "Relaxed",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c232f90049ef6f9f436"
+  },
+  "mood": "Bored",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c2a2f90049ef6f9f437"
+  },
+  "mood": "Apathetic",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c372f90049ef6f9f438"
+  },
+  "mood": "Lonely",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c492f90049ef6f9f439"
+  },
+  "mood": "Sad",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c4f2f90049ef6f9f43a"
+  },
+  "mood": "Frustrated",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c552f90049ef6f9f43b"
+  },
+  "mood": "Anxious",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c5a2f90049ef6f9f43c"
+  },
+  "mood": "Irritated",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c602f90049ef6f9f43d"
+  },
+  "mood": "Livid",
+  "comment": "",
+  "date": ""
+},
+{
+  "_id": {
+    "$oid": "647f1c652f90049ef6f9f43e"
+  },
+  "mood": "Fed Up",
+  "comment": "",
+  "date": ""
+}]

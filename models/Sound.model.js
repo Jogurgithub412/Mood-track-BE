@@ -11,6 +11,6 @@ const soundSchema = new Schema(
     }
 );
 
-const Mood = model("Sound", soundSchema);
+const Sound = model("Sound", soundSchema);
 
 module.exports = Sound;

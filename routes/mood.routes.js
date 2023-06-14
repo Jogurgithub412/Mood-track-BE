@@ -7,7 +7,7 @@ const Mood = require("../models/Mood.model");
 router.get("/home", async (req, res) => {
   try {
     let foundMoods = await Mood.find();
-    res.render("pages/moodtracker.jsx", { moods: foundMoods });
+    res.render("Pages/MoodTracker/index.jsx", { moods: foundMoods });
   } catch (error) {
     console.log(error);
   }

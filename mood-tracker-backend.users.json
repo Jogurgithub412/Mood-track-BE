@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "64813107cbea2a2e9d42cdd2"
+  },
+  "email": "bitterspine@hotmail.com",
+  "password": "$2a$10$/KXtrfvv9c90EeICVfJL1Oni9jEYCKeXznGsFF0skWltZU16M.sdO",
+  "name": "spine",
+  "createdAt": {
+    "$date": "2023-06-08T01:38:15.231Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-08T01:38:15.231Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64825070c8b5361386832173"
+  },
+  "email": "astral@astral.com",
+  "password": "$2a$10$jC6/TXrsJqNzDQh.i6c4Hur84NyfsbbMTxzT3WtJXkRNQvbenIH8y",
+  "name": "astral",
+  "createdAt": {
+    "$date": "2023-06-08T22:04:32.874Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-08T22:04:32.874Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6482e34221c69bf899d2531c"
+  },
+  "email": "astralcrystalline@gmail.com",
+  "password": "$2a$10$FQDVshtCAQV501kEaq54Juu1uYr13Ubt4UhsYMFAWcWgliz2rGX3.",
+  "name": "astrid",
+  "createdAt": {
+    "$date": "2023-06-09T08:30:58.263Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-09T08:30:58.263Z"
+  },
+  "__v": 0
+}]
