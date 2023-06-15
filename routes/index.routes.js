@@ -38,7 +38,7 @@ router.post("/create-mood-sound", async (req, res, next) => {
 
 router.get("/moods", async (req, res, next) => {
   try {
-    let allMoods = await Mood.find();
+    let allMoods =  await Mood.find();
     res.json(allMoods);
   } catch (error) {
     res.json(error);
